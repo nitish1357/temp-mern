@@ -6,7 +6,7 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';
-import { Navbar, BigSidebar, SmallSidebar } from '../components';
+import { Navbar, BigSidebar, SmallSidebar, Loading } from '../components';
 import { useState, createContext, useContext } from 'react';
 import { checkDefaultTheme } from '../App';
 import customFetch from '../utils/customFetch';
@@ -68,7 +68,7 @@ const DashboardLayout = () => {
           <div>
             <Navbar />
             <div className="dashboard-page">
-              {isPageLoading ? 'Loading...' : <Outlet context={{ user }} />}
+              {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
             </div>
           </div>
         </main>
